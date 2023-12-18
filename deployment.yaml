@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-django-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: python-django
+  template:
+    metadata:
+      labels:
+        app: python-django    
+    spec:
+      containers:
+        - name: python-django-container
+          image: lodhipr/python-django:latest
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "0.5"      
