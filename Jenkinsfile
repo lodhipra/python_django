@@ -37,7 +37,7 @@ pipeline {
         }
         stage('Exposing minikube ip with port') {
             steps {
-                echo "minikube service python-django-service --url"
+                sh "minikube service python-django-service --url"
             }
         }
     }
