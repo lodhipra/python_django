@@ -14,7 +14,7 @@ pipeline {
 
         stage('Building Docker image') {
             steps {
-                sh"docker build -t ${DOCKER_IMAGE}"
+                sh"docker build -t ${DOCKER_IMAGE} ."
             }
         }
         stage('Pushing Docker image on DockerHub') {
